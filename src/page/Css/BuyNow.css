@@ -1,0 +1,42 @@
+.product-modal .modal-content {
+    border-radius: 15px;
+    overflow: hidden;
+    border: none;
+}
+
+.product-modal .modal-header .btn-close {
+    font-size: 1.2rem;
+    padding: 0.5rem;
+}
+
+.product-modal .card {
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.product-modal .card:hover {
+    transform: translateY(-5px);
+}
+
+.product-modal .btn-success {
+    transition: all 0.3s ease;
+}
+
+.product-modal .btn-success:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(37, 211, 102, 0.3);
+}
+
+
+.whatsapp-btn {
+    background-color: #25D366;
+    border-color: #25D366;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+    background-color: #1da851;
+    border-color: #1da851;
+    color: white;
+}
