@@ -22,6 +22,10 @@ function Layout(props) {
     }
   };
 
+  const Login = async () => {
+    navigate('/')
+  }
+
   return (
     <Navbar bg="dark" variant="dark" expand="lg" className="py-3">
       <Container>
@@ -35,19 +39,14 @@ function Layout(props) {
           </Nav>
           <div className="flex items-center ms-auto gap-2">
             {!user ? (
-              <Link
-                to="/"
-                className="inline-block px-4 py-2 bg-cyan-700 text-white rounded hover:bg-cyan-800 transition duration-300 text-sm shadow"
-              >
-                Login
-              </Link>
+              <button type="button" class="btn btn-outline-light" onClick={Login}>Login</button>
             ) : (
               <>
                 <span className="text-white">Welcome,</span>
                 <span className="bg-cyan-700 px-2 py-1 rounded text-white">{user.name}</span>
                 <button
                   onClick={Logout}
-                  className="px-4 py-1 border border-white text-white rounded hover:bg-white hover:text-black transition duration-300 text-sm"
+                  className="px-4 py-1 btn btn-outline-light text-sm"
                 >
                   Log Out
                 </button>
