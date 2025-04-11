@@ -35,17 +35,23 @@ function Layout(props) {
             <Nav.Link as={Link} to="/about">About us</Nav.Link>
             <Nav.Link as={Link} to="/Product">Product</Nav.Link>
           </Nav>
-          {user?.name && (
-            <div className="flex items-center justify-between gap-4 mt-4 text-white flex-wrap">
-              <span className='mt-3'>Welcome,</span>
-              <span className="bg-cyan-700 px-2 py-1 rounded-md font-medium text-white mt-3">
-                {user.name}
-              </span>
-              <Button onClick={Logout} variant="outline-light" className="text-sm px-3 py-1 whitespace-nowrap">
-                Log Out
+          <div className="flex items-center justify-between gap-4 mt-4 text-white flex-wrap">
+            {!user ? (
+              <Button href="/" variant="outline-light" className="text-sm px-3 py-1 whitespace-nowrap">
+                Login
               </Button>
-            </div>
-          )}
+            ) : (
+              <>
+                <span className='mt-3'>Welcome,</span>
+                <span className="bg-cyan-700 px-2 py-1 rounded-md font-medium text-white mt-3">
+                  {user.name}
+                </span>
+                <Button onClick={Logout} variant="outline-light" className="text-sm px-3 py-1 whitespace-nowrap">
+                  Log Out
+                </Button>
+              </>
+            )}
+          </div>
         </Navbar.Collapse>
       </Container>
     </Navbar>
