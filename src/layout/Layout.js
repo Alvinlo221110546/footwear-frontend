@@ -8,7 +8,6 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Cookies from 'js-cookie';
 
-
 function Layout(props) {
   const navigate = useNavigate();
   const user = JSON.parse(localStorage.getItem('user'));
@@ -25,28 +24,26 @@ function Layout(props) {
   };
 
   return (
-    <Navbar bg="dark" data-bs-theme="dark" expand="lg" className="bg-body-tertiary" style={{ padding: '10px' }}>
+    <Navbar bg="dark" variant="dark" expand="lg" className="py-3">
       <Container>
-        <Navbar.Brand as={Link} to="/" className='mt-2'>Footwear Haven</Navbar.Brand>
+        <Navbar.Brand as={Link} to="/">Footwear Haven</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
-        <Navbar.Collapse id="navbarScroll">
-          <Nav className="me-auto my-2 my-lg-0" style={{ maxHeight: '100px' }} navbarScroll>
+        <Navbar.Collapse id="navbarScroll" className="align-items-center">
+          <Nav className="me-auto">
             <Nav.Link as={Link} to="/home">Home</Nav.Link>
             <Nav.Link as={Link} to="/about">About us</Nav.Link>
             <Nav.Link as={Link} to="/Product">Product</Nav.Link>
           </Nav>
-          <div className="flex items-center justify-between gap-4 mt-2 text-white flex-wrap">
+          <div className="d-flex align-items-center ms-auto gap-2">
             {!user ? (
-              <Button href="/" variant="outline-light" className="text-sm px-3 py-1 whitespace-nowrap">
+              <Button as={Link} to="/login" variant="outline-light" size="sm">
                 Login
               </Button>
             ) : (
               <>
-                <span className='mt-3'>Welcome,</span>
-                <span className="bg-cyan-700 px-2 py-1 rounded-md font-medium text-white mt-3">
-                  {user.name}
-                </span>
-                <Button onClick={Logout} variant="outline-light" className="text-sm px-3 py-1 whitespace-nowrap">
+                <span className="text-white me-2">Welcome,</span>
+                <span className="bg-cyan-700 px-2 py-1 rounded text-white">{user.name}</span>
+                <Button onClick={Logout} variant="outline-light" size="sm">
                   Log Out
                 </Button>
               </>
