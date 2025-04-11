@@ -36,7 +36,7 @@ function Layout(props) {
             <Nav.Link as={Link} to="/Product">Product</Nav.Link>
           </Nav>
           {user?.name && (
-            <div className="flex items-center justify-between gap-4 mt-3 text-white flex-wrap">
+            <div className="flex items-center justify-between gap-4 mt-4 text-white flex-wrap">
               <span className='mt-3'>Welcome,</span>
               <span className="bg-cyan-700 px-2 py-1 rounded-md font-medium text-white mt-3">
                 {user.name}
