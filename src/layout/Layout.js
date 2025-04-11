@@ -35,7 +35,7 @@ function Layout(props) {
             <Nav.Link as={Link} to="/about">About us</Nav.Link>
             <Nav.Link as={Link} to="/Product">Product</Nav.Link>
           </Nav>
-          <div className="flex items-center justify-between gap-4 mt-4 text-white flex-wrap">
+          <div className="flex items-center justify-between gap-4 mt-2 text-white flex-wrap">
             {!user ? (
               <Button href="/" variant="outline-light" className="text-sm px-3 py-1 whitespace-nowrap">
                 Login
