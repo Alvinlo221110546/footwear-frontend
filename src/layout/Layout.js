@@ -2,7 +2,6 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
@@ -34,18 +33,24 @@ function Layout(props) {
             <Nav.Link as={Link} to="/about">About us</Nav.Link>
             <Nav.Link as={Link} to="/Product">Product</Nav.Link>
           </Nav>
-          <div className="d-flex align-items-center ms-auto gap-2">
+          <div className="flex items-center ms-auto gap-2">
             {!user ? (
-              <Button as={Link} to="/login" variant="outline-light" size="sm">
+              <Link
+                to="/"
+                className="inline-block px-4 py-2 bg-cyan-700 text-white rounded hover:bg-cyan-800 transition duration-300 text-sm shadow"
+              >
                 Login
-              </Button>
+              </Link>
             ) : (
               <>
-                <span className="text-white me-2">Welcome,</span>
+                <span className="text-white">Welcome,</span>
                 <span className="bg-cyan-700 px-2 py-1 rounded text-white">{user.name}</span>
-                <Button onClick={Logout} variant="outline-light" size="sm">
+                <button
+                  onClick={Logout}
+                  className="px-4 py-1 border border-white text-white rounded hover:bg-white hover:text-black transition duration-300 text-sm"
+                >
                   Log Out
-                </Button>
+                </button>
               </>
             )}
           </div>
